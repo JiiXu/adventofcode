@@ -6,3 +6,12 @@ For day 1, it's two solutions in `awk`. I'd never used `awk` before so I think i
 
 ## Day 2
 The solution for puzzle 1a is a bit of silly dynamic programming; the shell script adds rows to itself to calculate and print the answer and then deletes those rows from itself thus restoring its original state. For puzzle 2b I went back to `awk`.
+
+## Day 3
+One in awk, one in haskell.
+
+## Day 4
+This puzzle felt grindy and I couldn't really come up with anything really creative or clever. So I solved in in Python.
+
+## Day 5
+Again a quite grindy puzzle, but my interest in awk is really piqued - I think I am going to attempt to do something in perl next! I don't know perl whatsoever.
