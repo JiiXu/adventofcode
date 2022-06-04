@@ -20,12 +20,13 @@ weeks=$((n/7))
 y=$(expr length $(echo $s | sed 's/[^78]//g'))
 t=$(expr length $(echo $s | sed 's/[^56]//g'))
 m=$(expr length $(echo $s | sed 's/[,5678]//g'))
-
+j<aznj
 for (( i=0; i<weeks; i++ ))
 do
-# Mature fish double in number every week, and all young fish become mature fish
-m=$((2*m))+y
-# All young fish that became mature are replenished by the teens
-y=$t
+# Mature fish double, and all young fish become mature fish
+m=$((m*2+y))
+# Teens generate one young fish each
+y=t
+
 done
 echo $m
