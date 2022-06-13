@@ -14,7 +14,8 @@ function bin_arr_2_dec(array)
 
 function str2dec(s)
 {
-  
+  split(s, chars, "")
+  return bin_arr_2_dec(chars)
 }
 
 function p(arr)
@@ -52,7 +53,7 @@ function sum(arr, out)
 
 }
 
-function oxy(arr, sums, oxy_result)
+function oxy(arr, sums)
 {
   pos = 1
   cp_arr(arr, oxy_result)
@@ -72,9 +73,32 @@ function oxy(arr, sums, oxy_result)
     sum(oxy_result, oxy_sums)
   }
 
+  return str2dec(oxy_result[1])
+
 }
 
-BEGIN {
+function c02(arr, sums)
+{
+  pos = 1
+  cp_arr(arr, c02_result)
+  cp_arr(sums, c02_sums)
+  l = length(c02_result)
+  m = l/2
+  while (l != 1) {
+    if (c02_sums[pos] < m) {
+      filter(c02_result, c02_tmp, pos++, 1)
+    }
+    else {
+      filter(c02_result, c02_tmp, pos++, 0)
+    }
+    cp_arr(c02_tmp, c02_result)
+    l = length(c02_result)
+    m = l/2
+    sum(c02_result, c02_sums)
+  }
+
+  return str2dec(c02_result[1])
+
 }
 
 {
@@ -83,6 +107,7 @@ BEGIN {
 
 END {
   sum(rows, sums)
-  oxy(rows, sums, oxy_result)
-  # only thing now is that the solution in oxy_result[1] is not a string and can't be unbinaried
+  oxy_v = oxy(rows, sums)
+  c02_v = c02(rows, sums)
+  print oxy_v*c02_v
 }
