@@ -1,11 +1,7 @@
-BEGIN {
-  count = 0
-}
-
 {
-  if (NR > 1 && $1 - prev > 0) {
+  if (NR > 1 && $1 - prev > 0)
     count++
-  }
+
   prev = $1
 }
 

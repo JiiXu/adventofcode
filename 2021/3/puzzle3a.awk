@@ -14,9 +14,9 @@ function bin_arr_2_dec(array)
 
 {
   split($0, chars, "")
-  for (i in chars) {
+  for (i in chars)
     sums[i] += chars[i]
-  }
+
 }
 
 END {
